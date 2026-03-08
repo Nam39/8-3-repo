@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thiệp 8/3</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9ec4,#ffd6e7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    width:350px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#ff4f8b;
+}
+
+p{
+    font-size:18px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#ff4f8b;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.flower{
+    position:absolute;
+    font-size:25px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-10vh) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="card">
+
+<h1>🌸 Happy Women's Day 🌸</h1>
+
+<p>
+Chúc bạn một ngày 8/3 thật nhiều niềm vui,  
+luôn xinh đẹp, hạnh phúc và thành công.
+</p>
+
+<button onclick="createFlowers()">Nhận hoa 🌹</button>
+
+</div>
+
+<script>
+
+function createFlowers(){
+
+for(let i=0;i<30;i++){
+
+let flower=document.createElement("div")
+
+flower.className="flower"
+
+flower.innerHTML="🌸"
+
+flower.style.left=Math.random()*100+"vw"
+
+flower.style.animationDuration=(3+Math.random()*5)+"s"
+
+flower.style.fontSize=(20+Math.random()*20)+"px"
+
+document.body.appendChild(flower)
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
